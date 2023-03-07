@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Acceuil', href: '/portofolio' },
+	{ label: 'Acceuil', href: '/portofolio/' },
 	{ label: 'Portofolio', href: '/portofolio/work/' },
 	{ label: 'Outils et Langages', href: '/portofolio/tools/' },
 	{ label: 'A propos', href: '/portofolio/about/' },
@@ -18,7 +18,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 
 <nav>
 	<div class="menu-header">
-		<a href="/portofolio" class="site-title">
+		<a href="/portofolio/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			François Planiol
 		</a>
@@ -43,7 +43,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/portofolio' && Astro.url.pathname.startsWith(href)),
+										(href !== '/portofolio/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
 							href={href}
