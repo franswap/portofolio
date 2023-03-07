@@ -1,7 +1,7 @@
 ---
 title: Booki
 publishDate: 2019-12-01 00:00:00
-img: /assets/Booki-Maquette.png
+img: /portofolio/assets/Booki-Maquette.png
 img_alt: Maquette du projet Booki
 description: |
   Un des premiers projets que j'ai pu réaliser via la plateforme OpenClassroom
