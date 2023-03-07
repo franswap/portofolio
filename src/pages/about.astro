@@ -5,57 +5,21 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="A propos | François Planiol" description="Page à propos de François Planiol, web developer">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title="A propos"
+				tagline="Alternant en tant que concepteur développeur d'applications, ambitieux et motivé. Passionné par l'environnement numérique, la conception et le développement d'applications."
 			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
-				/>
 			</Hero>
-
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
 		</main>
+
+		<section>
+			<div class="button center">
+				<a class="color_button" href="/assets/files/cv_francois.pdf" target="_blank">CV en PDF</a>
+			</div>
+		</section>
 
 		<ContactCTA />
 	</div>
@@ -87,6 +51,27 @@ import Hero from '../components/Hero.astro';
 		color: var(--gray-0);
 	}
 
+	.center {
+		text-align: center;
+	}
+
+	.color_button {
+		color: var(--clr-violet);
+	}
+
+	.button a {
+		padding: 20px 80px;
+		border: 1px solid #b3aca7;
+		border-radius: 200px;
+		width: 300px;
+	}
+
+	.button:hover a {
+	background: #b3aca7;
+	color: #e2dedb;
+	transition: all 0.3s ease-in-out;
+	text-decoration: none;
+	}
 	.content {
 		grid-column: 2 / 4;
 	}

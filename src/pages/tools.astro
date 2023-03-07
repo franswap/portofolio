@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -9,20 +8,10 @@ import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
 
-// Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <BaseLayout>
@@ -30,49 +19,13 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="François Planiol"
-					tagline="Developpeur web à Absys Cyborg"
+					title="Outils et langage"
 					align="start"
 				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developpeur</Pill>
-						<Pill><Icon icon="strategy" size="1.33em" /> Economiste</Pill>
-						<Pill><Icon icon="trophy" size="1.33em" /> Tennisman</Pill>
-					</div>
 				</Hero>
-
-				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
-					src="/assets/fra_pla_id.jpg"
-				/>
 			</header>
 
-			<h2>Experiences pro</h2>
-			<Skills />
-		</div>
-
 		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Quelques Réalisations</h3>
-					<p>Voici quelques projets sur lesquels j'ai été amené à travailler</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-
-			</section>
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
@@ -94,10 +47,32 @@ const projects = (await getCollection('work'))
 					</Grid>
 				</div>
 			</section>
+
+            <section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Outils</h3>
+					<p>
+						Voici une liste non exhaustive des outils que je maitrise.
+					</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="small">
+						{
+							['Git & GitHub', 'VSC', 'Postman', 'Figma', 'Power Plateform', 'Business Central', 'PostgreSQL', 'Trello', 'Firebase'].map((brand) => (
+								<li class="mention-card">
+									<p>{brand}</p>
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+			</section>
 		</main>
 
 		<ContactCTA />
-	</div>
+	    </div>
+    </div>
 </BaseLayout>
 
 <style>
