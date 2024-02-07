@@ -4,4 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://franswap.github.io',
     base: '/portofolio',
+    routes: [
+        { path: '/work/:slug', component: 'src/pages/WorkDetail.astro' },
+      ],
 });
